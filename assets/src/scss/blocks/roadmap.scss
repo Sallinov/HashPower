@@ -46,6 +46,11 @@
             font-size: 52px;
             line-height: 52px;
         }
+
+        @media (max-width: $xs-max) {
+            font-size: 46px;
+            line-height: 46px;
+        }
     }
 
     &__sub-header {
@@ -114,6 +119,12 @@
                 font-size: 32px;
                 line-height: 32px;
             }
+
+            @media (max-width: $sm-max) {
+                height: 68px;
+                font-size: 26px;
+                line-height: 26px;
+            }
         }
     }
 
@@ -125,6 +136,10 @@
         align-items: center;
         transition: color .222s ease-in-out;
         cursor: pointer;
+
+        @media (max-width: $sm-max) {
+            padding: 6px 0 0 36px;
+        }
 
         &:hover {
             color: $white-color;
@@ -161,12 +176,22 @@
                 border-left: 30px solid $roadmap-slider-border;
                 display: block;
                 content: '';
+
+                @media (max-width: $sm-max) {
+                    border-top: 35px solid transparent;
+                    border-bottom: 35px solid transparent;
+                    border-left: 20px solid $roadmap-slider-border;
+                }
             }
         }
     }
 
     &__slide {
         padding: 72px 30px 110px;
+
+        @media (max-width: $sm-max) {
+            padding: 32px 16px 90px;
+        }
 
         &, & * {
             font-family: 'Gilroy', sans-serif;
@@ -181,8 +206,8 @@
             }
 
             @media (max-width: $sm-max) {
-                font-size: 22px;
-                line-height: 26px;
+                font-size: 20px;
+                line-height: 24px;
             }
         }
     }
@@ -201,6 +226,8 @@
             margin-right: 12px;
             width: 20px;
             height: 20px;
+            min-width: 20px;
+            min-height: 20px;
             border-radius: 10px;
             display: block;
             content: '';
@@ -299,6 +326,10 @@
             @media (max-width: $xxxl-max) {
                 left: 30px;
             }
+
+            @media (max-width: $sm-max) {
+                left: 16px;
+            }
         }
 
         &--next {
@@ -307,11 +338,19 @@
             @media (max-width: $xxxl-max) {
                 right: 30px;
             }
+
+            @media (max-width: $sm-max) {
+                right: 16px;
+            }
         }
 
         @media (max-width: $xxxl-max) {
             bottom: 0;
             top: unset;
+        }
+
+        @media (max-width: $sm-max) {
+            bottom: -6px;
         }
     }
 

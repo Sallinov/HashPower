@@ -11,7 +11,7 @@ function markerPositionChange ($link) {
     if (burgerStatus) {
         indent = $link.offsetTop
         ratio = $link.offsetHeight + ($marker.offsetHeight / 2)
-        result = indent - (ratio)
+        result = indent - ratio
     } else {
         indent = $link.offsetLeft
         ratio = $link.offsetWidth - $marker.offsetWidth
@@ -21,6 +21,7 @@ function markerPositionChange ($link) {
 }
 
 function toggleHeader () {
+    if (!burgerStatus) return false
     $header.classList.toggle('open')
     $dimer.classList.toggle('show')
     if ($header.classList.contains('open')) {
@@ -49,14 +50,18 @@ function initHeader () {
     })
 
     document.body.addEventListener('click', event => {
-        if (event.target.closest('.js-dimer.show') && $header.classList.contains('open')) {
-            toggleHeader()
+        if (event.target.closest('.js-dimer.show')) {
+            if (burgerStatus && $header.classList.contains('open')) {
+                toggleHeader ()
+            }
         }
     })
 
     window.addEventListener('resize', () => {
         burgerStatus = window.innerWidth <= 959
-        $header.classList.remove('open')
+        if (burgerStatus && $header.classList.contains('open')) {
+            toggleHeader ()
+        }
         markerPositionChange($activeLink)
     })
 }

@@ -58,11 +58,14 @@
         }
     }
 
-    &__desription {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 26px;
+    &__description {
         color: $light-gray-color;
+
+        &, & * {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 26px;
+        }
 
         @media (max-width: $sm-max) {
             grid-row: 2;
@@ -93,6 +96,10 @@
                 gap: 30px;
             }
 
+            @media (max-width: $sm-max) {
+                height: 68px;
+            }
+
             &, & * {
                 font-family: 'Bebas Neue', sans-serif;
                 font-weight: bold;
@@ -105,9 +112,9 @@
                 }
     
                 @media (max-width: $sm-max) {
-                    height: 76px;
-                    font-size: 30px;
-                    line-height: 30px;
+                    height: 68px;
+                    font-size: 26px;
+                    line-height: 26px;
                 }
             }
         }

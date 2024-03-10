@@ -58,6 +58,11 @@
             font-family: 'Bebas Neue', sans-serif;
             color: $based-color;
             justify-content: space-between;
+
+            @media (max-width: $sm-max) {
+                font-size: 30px;
+                line-height: 30px;
+            }
         }
 
         .active {
@@ -92,6 +97,10 @@
             gap: 32px;
             flex: 1 1 auto;
             flex-direction: column;
+        }
+
+        @media (max-width: $sm-max) {
+            gap: 24px;
         }
     }
     
@@ -202,6 +211,7 @@
     }
 
     &__btn-close {
+        margin-left: -38px;
         margin-bottom: 8px;
         text-align: center;
         justify-content: center;

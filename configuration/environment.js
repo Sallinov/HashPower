@@ -3,8 +3,8 @@ module.exports = {
   paths: {
     source: path.resolve(__dirname, '../assets/src/'),
     outputs: {
-      development: path.resolve(__dirname, '/assets/build/dev'),
-      production: path.resolve(__dirname, '/assets/build/prod')
+      development: path.resolve(__dirname, '../assets/build/dev'),
+      production: path.resolve(__dirname, '../assets/build/prod')
     },
   },
   server: {

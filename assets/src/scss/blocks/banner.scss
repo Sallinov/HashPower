@@ -14,6 +14,11 @@
         min-height: 610px;
     }
 
+    @media (max-width: $sm-max) {
+        padding-top: 40px;
+        min-height: 680px;
+    }
+
     &::after,
     &::before {
         top: 0;
@@ -69,6 +74,11 @@
             line-height: 52px;
         }
 
+        @media (max-width: $xs-max) {
+            font-size: 46px;
+            line-height: 46px;
+        }
+
         .c-primary {
             text-shadow: 0 0 318px rgba(62, 255, 127, .48), 0 0 638px rgba(62, 255, 127, .48);
         }
@@ -100,6 +110,11 @@
         @media (max-width: $md-max) {
             font-size: 22px;
             line-height: 26px;
+        }
+
+        @media (max-width: $xs-max) {
+            font-size: 20px;
+            line-height: 24px;
         }
 
         &:nth-of-type(1) {
