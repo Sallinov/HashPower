@@ -1,0 +1,369 @@
+.roadmap {
+    position: relative;
+    padding: 150px 0;
+    background-color: $dark-grin-color;
+    display: flex;
+
+    @media (max-width: $md-max) {
+        padding: 100px 0;
+    }
+
+    .container {
+        z-index: 2;
+        position: relative;
+    }
+
+    &::after {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        background: linear-gradient($main-color 0%, transparent 28%, transparent 62%, $main-color 100%);
+    }
+
+    &__main-header {
+        margin-bottom: 8px;
+        color: $primary-color;
+        font-size: 70px;
+        font-weight: bold;
+        line-height: 70px;
+        text-align: center;
+        font-family: 'Bebas Neue', sans-serif;
+        text-shadow: 0 0 6.48px $primary-color;
+
+        @media (max-width: $md-max) {
+            font-size: 60px;
+            line-height: 60px;
+        }
+
+        @media (max-width: $sm-max) {
+            font-size: 52px;
+            line-height: 52px;
+        }
+    }
+
+    &__sub-header {
+        margin-bottom: 82px;
+        color: $white-color;
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        text-align: center;
+        font-family: 'Gilroy', sans-serif;
+
+        @media (max-width: $md-max) {
+            margin-bottom: 62px;
+            font-size: 36px;
+            line-height: 46px;
+        }
+
+        @media (max-width: $sm-max) {
+            margin-bottom: 42px;
+            font-size: 28px;
+            line-height: 38px;
+        }
+    }
+
+    &__slider {
+        width: 630px;
+        min-width: 630px;
+        border-radius: 0 12px 12px 12px;
+        border: solid 1.18px $roadmap-slider-border;
+        background-color: $roadmap-slide-color;
+
+        @media (max-width: $md-max) {
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    &__pagination {
+        position: static !important;
+        height: 86px;
+        display: flex;
+        align-items: center;
+        color: $roadmap-tab-text-color;
+        background-color: $roadmap-tabs-color;
+
+        & > * {
+            flex: 1 1 auto;
+            width: auto !important;
+            height: auto !important;
+            display: block;
+        }
+
+        &, & * {
+            font-family: 'Bebas Neue', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 40px;
+
+            @media (max-width: $md-max) {
+                font-size: 36px;
+                line-height: 36px;
+            }
+
+            @media (max-width: $sm-max) {
+                font-size: 32px;
+                line-height: 32px;
+            }
+        }
+    }
+
+    &__tab {
+        position: relative;
+        padding: 6px 0 0 50px;
+        height: 100% !important;
+        display: flex;
+        align-items: center;
+        transition: color .222s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: $white-color;
+        }
+
+        &:first-child {
+            @media (max-width: $sm-max) {
+                padding-left: 16px;
+            }
+
+            &::before {
+                margin-bottom: 6px;
+                margin-right: 16px;
+                width: 12px;
+                height: 12px;
+                border-radius: 18px;
+                display: block;
+                content: '';
+                background-color: $primary-color;
+                box-shadow: 0 0 6.48px $primary-color;
+            }
+        }
+
+        &.swiper-pagination-bullet-active {
+            color: $primary-color;
+            background-color: $roadmap-slider-border;
+
+            &::after {
+                top: 0;
+                left: 100%;
+                position: absolute;
+                border-top: 43px solid transparent;
+                border-bottom: 43px solid transparent;
+                border-left: 30px solid $roadmap-slider-border;
+                display: block;
+                content: '';
+            }
+        }
+    }
+
+    &__slide {
+        padding: 72px 30px 110px;
+
+        &, & * {
+            font-family: 'Gilroy', sans-serif;
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 30px;
+            color: $white-color;
+
+            @media (max-width: $md-max) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            @media (max-width: $sm-max) {
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    &__list {
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list-elem {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            display: block;
+            content: '';
+            background-color: $primary-color;
+            box-shadow: 0 0 6.48px $primary-btn-color;
+        }
+
+        &--unactive {
+            &::before {
+                background-color: $roadmap-slider-border;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+            }
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        gap: 80px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $md-max) {
+            gap: 0;
+        }
+    }
+
+    &__visual {
+        max-width: 50%;
+
+        @media (max-width: $xxl-max) {
+            margin-left: -20%;
+            max-width: 66%;
+        }
+
+        @media (max-width: $lg-max) {
+            margin-left: -30%;
+            max-width: 80%;
+            opacity: .444;
+        }
+
+        @media (max-width: $md-max) {
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            position: absolute;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+        }
+    }
+
+    &__background {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top right;
+    }
+
+    &__btn {
+        top: 50%;
+        z-index: 4;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: $roadmap-slider-border;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary-btn-color;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        &.swiper-button-disabled {
+            opacity: .444;
+            cursor: default;
+        }
+
+        & > svg {
+            width: 14px;
+            height: 14px;
+            filter: drop-shadow(0 0 2.48px $primary-btn-color);
+            cursor: pointer;
+        }
+
+        &--prev {
+            left: -76px;
+            transform: rotate(180deg) translateY(50%);
+            transform-origin: center;
+
+            @media (max-width: $xxxl-max) {
+                left: 30px;
+            }
+        }
+
+        &--next {
+            right: -76px;
+
+            @media (max-width: $xxxl-max) {
+                right: 30px;
+            }
+        }
+
+        @media (max-width: $xxxl-max) {
+            bottom: 0;
+            top: unset;
+        }
+    }
+
+    &__slider-wrap {
+        position: relative;
+
+        @media (max-width: $lg-max) {
+            opacity: .888;
+        }
+
+        @media (max-width: $md-max) {
+            width: 100%;
+        }
+    }
+
+    &__sub-pagination {
+        left: 50%;
+        bottom: 36px;
+        z-index: 4;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        gap: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-50%);
+    }
+
+    &__sub-tab {
+        margin: -10px;
+        padding: 10px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+
+        &::before {
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            content: '';
+            display: block;
+            background-color: $roadmap-slider-border;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+            cursor: pointer;
+        }
+
+        &.active {
+            &::before {
+                background-color: $primary-color;
+                box-shadow: 0 0 6.48px $primary-color;
+            }
+        }
+    }
+}

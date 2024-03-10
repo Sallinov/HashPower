@@ -1,0 +1,80 @@
+﻿*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: unset;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: default;
+    list-style: none;
+}
+
+body,
+html {
+    min-height: 100vh;
+    font-weight: 500;
+    font-family: 'Gilroy', sans-serif;
+    background-color: $main-color;
+    color: $based-color;
+}
+
+a, button, a *, button * {
+    cursor: pointer;
+}
+
+.c-primary {
+    color: $primary-color;
+}
+
+.no-animate {
+    &, & * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+.container {
+    margin: auto;
+    padding: 0 30px;
+    width: 1480px;
+
+    @media (max-width: $md-max) {
+        width: 100%;
+    }
+
+    @media (max-width: $sm-max) {
+        padding: 0 16px;
+    }
+}
+
+section {
+    overflow: hidden;
+}
+
+* {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+a, button, .hover {
+    box-shadow: none;
+    opacity: 1;
+    transition: all .222s ease-in-out;
+
+    &:hover {
+        opacity: .777;
+    }
+}
