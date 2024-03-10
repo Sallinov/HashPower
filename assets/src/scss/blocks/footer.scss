@@ -117,14 +117,16 @@
             .footer__link {
                 margin: -12px;
                 padding: 12px;
-                cursor: pointer;
 
                 svg {
                     margin-bottom: -3px;
                     width: 20px;
                     height: 20px;
-                    cursor: pointer;
                     transition: all .222s ease-in-out;
+                }
+
+                &, & * {
+                    cursor: pointer;
                 }
             }
 

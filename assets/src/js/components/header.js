@@ -6,7 +6,10 @@ const $marker = $header.querySelector('.js-marker')
 let $activeLink = $header.querySelector('.active').closest('.header__list-item')
 let burgerStatus = window.innerWidth <= 959
 
-function markerPositionChange ($link) {
+export function markerPositionChange ($link) {
+    $header.querySelector('.active').classList.remove('active')
+    $link.classList.add('active')
+    $activeLink = $link.closest('.header__list-item')
     let indent, ratio, result
     if (burgerStatus) {
         indent = $link.offsetTop
@@ -38,10 +41,7 @@ function initHeader () {
     $header.addEventListener('click', event => {
         if (event.target.closest('.header__link:not(.active)')) {
             const $link = event.target.closest('.header__link')
-            $header.querySelector('.active').classList.remove('active')
-            $link.classList.add('active')
-            $activeLink = $link.closest('.header__list-item')
-            markerPositionChange($activeLink)
+            markerPositionChange($link)
             toggleHeader()
         }
         if (event.target.closest('.js-header-btn')) {
