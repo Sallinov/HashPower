@@ -23,10 +23,8 @@ function initAnchor () {
             statusAnchorClick = true
             event.preventDefault()
             const href = $anchor.getAttribute('href')
-            window.scroll({
-                top: document.querySelector(href).offsetTop - $header.offsetHeight, 
-                left: 0, 
-                behavior: 'smooth' 
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
             })
         }
     })

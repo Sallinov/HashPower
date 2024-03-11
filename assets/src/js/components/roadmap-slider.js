@@ -29,9 +29,6 @@ function initRoadmapSlider () {
                     const $bullets = document.querySelectorAll('.swiper-pagination-bullet')
                     const $subBullets = document.querySelectorAll('.roadmap__sub-tab')
                     $bullets.forEach(($bullet, key) => {
-                        if (key <= this.activeIndex) {
-                            $bullet.classList.add('swiper-pagination-bullet-active')
-                        }
                         if (key === this.activeIndex) {
                             $subBullets[key].classList.add('active')
                         } else {

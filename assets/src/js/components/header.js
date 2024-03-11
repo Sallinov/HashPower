@@ -13,12 +13,13 @@ export function markerPositionChange ($link) {
     let indent, ratio, result
     if (burgerStatus) {
         indent = $link.offsetTop
-        ratio = $link.offsetHeight + ($marker.offsetHeight / 2)
+        ratio = ($link.offsetHeight + $marker.offsetHeight + 6) / 2
         result = indent - ratio
+        $header.querySelector('.active').click()
     } else {
         indent = $link.offsetLeft
-        ratio = $link.offsetWidth - $marker.offsetWidth
-        result = indent + (ratio / 2)
+        ratio = ($link.offsetWidth - $marker.offsetWidth) / 2
+        result = indent + ratio
     }
     $marker.style.transform = `translate${burgerStatus ? 'Y' : 'X'}(${result}px)`
 }
@@ -36,12 +37,12 @@ function toggleHeader () {
 
 function initHeader () {
     setTimeout( () => markerPositionChange($activeLink), 0 )
-    setTimeout( () => $header.classList.remove('no-animate') , 222 )
+    setTimeout( () => $header.classList.remove('no-animate'), 222 )
 
     $header.addEventListener('click', event => {
         if (event.target.closest('.header__link:not(.active)')) {
             const $link = event.target.closest('.header__link')
-            markerPositionChange($link)
+            markerPositionChange($link.closest('.header__list-item'))
             toggleHeader()
         }
         if (event.target.closest('.js-header-btn')) {

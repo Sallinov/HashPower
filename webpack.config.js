@@ -64,7 +64,7 @@ module.exports = (mode) => {
             },
           },
           generator: {
-            filename: 'fonts/[name].[hash:6][ext]',
+            filename: 'fonts/[name][ext]',
           },
         },
         {

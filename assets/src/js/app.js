@@ -1,7 +1,9 @@
-import '../scss/app.scss';
-import './helpers/initSvgSprite';
-import controls from './controls';
+import '../scss/app.scss'
+import './helpers/initSvgSprite'
+import controls from './controls'
 
-window.addEventListener('DOMContentLoaded', () => {
-    controls.init()
+document.addEventListener('readystatechange', event => { 
+    if (event.target.readyState.includes('complete')) {
+        controls.init()
+    }
 })
