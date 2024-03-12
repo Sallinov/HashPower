@@ -7,10 +7,19 @@
     }
 
     &__grid {
-        gap: 42px 60px;
+        gap: 42px 76px;
         display: grid;
         justify-content: space-between;
         grid-template-columns: 1fr 1fr 1fr;
+
+
+        @media (max-width: $container-max) {
+            gap: 38px 56px;
+        }
+
+        @media (max-width: $xl-max) and (min-width: $md-min) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
 
         @media (max-width: $lg-max) {
             grid-template-columns: 1fr 1fr;

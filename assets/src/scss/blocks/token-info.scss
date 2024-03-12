@@ -7,7 +7,7 @@
     }
 
     &__header {
-        margin-bottom: 100px;
+        margin-bottom: 130px;
         text-align: center;
         font-weight: bold;
         font-size: 70px;
@@ -17,13 +17,13 @@
         font-family: 'Bebas Neue', sans-serif;
 
         @media (max-width: $md-max) {
-            margin-bottom: 66px;
+            margin-bottom: 100px;
             font-size: 60px;
             line-height: 60px;
         }
 
         @media (max-width: $sm-max) {
-            margin-bottom: 36px;
+            margin-bottom: 46px;
             font-size: 52px;
             line-height: 52px;
         }
@@ -40,16 +40,22 @@
 
     &__grid {
         margin-bottom: 108px;
-        gap: 38px 158px;
+        gap: 76px 110px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
 
-        @media (max-width: $xxxl-max) {
-            gap: 38px 98px;
+
+        @media (max-width: $container-max) {
+            grid-template-columns: 1fr 1fr;
+            gap: 38px 76px;
         }
 
         @media (max-width: $xxl-max) {
             gap: 38px;
+        }
+
+        @media (max-width: $xl-max) and (min-width: $md-min) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         @media (max-width: $md-max) {
@@ -63,29 +69,24 @@
     }
 
     &__description {
-        margin: 0 auto 20px;
-        max-width: 1074px;
+        margin: 0 auto 36px;
+        max-width: 948px;
         font-family: 'Gilroy', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: 34px;
+        font-size: 30px;
         line-height: 42px;
         text-align: center;
         color: $white-color;
 
         @media (max-width: $md-max) {
-            font-size: 30px;
+            font-size: 26px;
             line-height: 38px;
         }
 
         @media (max-width: $sm-max) {
-            font-size: 26px;
-            line-height: 34px;
-        }
-    
-        @media (max-width: $sm-max) {
             font-size: 22px;
-            line-height: 30px;
+            line-height: 34px;
         }
     }
 

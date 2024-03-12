@@ -31,8 +31,11 @@
         }
 
         @media (max-width: $md-max) {
-            width: 230px;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: auto;
             height: 60px;
+            flex: 1 1 auto;
         }
     }
 

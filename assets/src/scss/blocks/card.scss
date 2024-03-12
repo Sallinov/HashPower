@@ -16,7 +16,7 @@
     }
 
     &__icon {
-        margin: 0 auto 12px;
+        margin: 0 auto 24px;
         width: 80px;
         height: 80px;
         border-radius: 16px;
@@ -46,13 +46,20 @@
     }
 
     &__header {
-        margin-bottom: 8px;
+        margin-bottom: 16px;
         font-size: 30px;
         font-weight: 700;
-        line-height: 37px;
+        line-height: 30px;
         color: $primary-header-color;
 
+        @media (max-width: $md-max) {
+            font-size: 26px;
+            line-height: 26px;
+        }
+
         @media (max-width: $sm-max) {
+            font-size: 22px;
+            line-height: 22px;
             grid-row: 1;
             grid-column: 2;
         }
@@ -62,9 +69,21 @@
         color: $light-gray-color;
 
         &, & * {
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 26px;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 24px;
+
+            @media (max-width: $md-max) {
+                font-size: 20px;
+                line-height: 20px;
+            }
+    
+            @media (max-width: $sm-max) {
+                font-size: 16px;
+                line-height: 16px;
+                grid-row: 1;
+                grid-column: 2;
+            }
         }
 
         @media (max-width: $sm-max) {
@@ -76,12 +95,12 @@
     &--line {
         &.card {
             padding: 0;
-            height: 86px;
+            height: 64px;
             border-radius: 12px;
             background-color: $roadmap-slide-color;
             border: solid 1.18px $roadmap-slider-border;
             color: $white-color;
-            gap: 50px;
+            gap: 34px;
             display: flex;
             align-items: center;
             text-align: left;
@@ -96,25 +115,20 @@
                 gap: 30px;
             }
 
-            @media (max-width: $sm-max) {
-                height: 68px;
-            }
-
             &, & * {
                 font-family: 'Bebas Neue', sans-serif;
                 font-weight: bold;
-                font-size: 40px;
-                line-height: 40px;
+                font-size: 30px;
+                line-height: 30px;
 
                 @media (max-width: $md-max) {
-                    font-size: 36px;
-                    line-height: 36px;
-                }
-    
-                @media (max-width: $sm-max) {
-                    height: 68px;
                     font-size: 26px;
                     line-height: 26px;
+                }
+
+                @media (max-width: $sm-max) {
+                    font-size: 22px;
+                    line-height: 22px;
                 }
             }
         }
@@ -123,7 +137,7 @@
             &__label,
             &__value {
                 padding-top: 6px;
-                height: 86px;
+                height: 64px;
                 display: flex;
                 align-items: center;
                 flex: 1 1 50%;
@@ -134,7 +148,7 @@
             }
 
             &__value {
-                padding-right: 28px;
+                padding-right: 16px;
 
                 @media (max-width: $xxl-max) {
                     padding-right: 8px;
@@ -154,7 +168,7 @@
             }
 
             &__label {
-                padding-left: 28px;
+                padding-left: 16px;
                 position: relative;
                 color: $primary-color;
                 background-color: $roadmap-slider-border;
@@ -196,9 +210,9 @@
                     top: 0;
                     left: 100%;
                     position: absolute;
-                    border-top: 43px solid transparent;
-                    border-bottom: 43px solid transparent;
-                    border-left: 30px solid $roadmap-slider-border;
+                    border-top: 33px solid transparent;
+                    border-bottom: 33px solid transparent;
+                    border-left: 20px solid $roadmap-slider-border;
                     display: block;
                     content: '';
 

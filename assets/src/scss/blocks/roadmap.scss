@@ -28,7 +28,7 @@
     }
 
     &__main-header {
-        margin-bottom: 8px;
+        margin-bottom: 38px;
         color: $primary-color;
         font-size: 70px;
         font-weight: bold;
@@ -54,24 +54,24 @@
     }
 
     &__sub-header {
-        margin-bottom: 82px;
+        margin-bottom: 86px;
         color: $white-color;
-        font-size: 50px;
+        font-size: 30px;
         font-weight: 500;
-        line-height: 60px;
+        line-height: 30px;
         text-align: center;
         font-family: 'Gilroy', sans-serif;
 
         @media (max-width: $md-max) {
             margin-bottom: 62px;
-            font-size: 36px;
-            line-height: 46px;
+            font-size: 26px;
+            line-height: 26px;
         }
 
         @media (max-width: $sm-max) {
             margin-bottom: 42px;
-            font-size: 28px;
-            line-height: 38px;
+            font-size: 22px;
+            line-height: 22px;
         }
     }
 
@@ -90,7 +90,7 @@
 
     &__pagination {
         position: static !important;
-        height: 86px;
+        height: 64px;
         display: flex;
         align-items: center;
         color: $roadmap-tab-text-color;
@@ -107,39 +107,28 @@
             font-family: 'Bebas Neue', sans-serif;
             font-style: normal;
             font-weight: bold;
-            font-size: 40px;
-            line-height: 40px;
+            font-size: 30px;
+            line-height: 30px;
 
             @media (max-width: $md-max) {
-                font-size: 36px;
-                line-height: 36px;
-            }
-
-            @media (max-width: $sm-max) {
-                font-size: 32px;
-                line-height: 32px;
-            }
-
-            @media (max-width: $sm-max) {
-                height: 68px;
                 font-size: 26px;
                 line-height: 26px;
+            }
+
+            @media (max-width: $sm-max) {
+                font-size: 22px;
+                line-height: 22px;
             }
         }
     }
 
     &__tab {
-        position: relative;
-        padding: 6px 0 0 50px;
+        padding: 6px 0 0 34px;
         height: 100% !important;
         display: flex;
         align-items: center;
         transition: color .222s ease-in-out;
         cursor: pointer;
-
-        @media (max-width: $sm-max) {
-            padding: 6px 0 0 36px;
-        }
 
         &:hover {
             color: $white-color;
@@ -171,43 +160,37 @@
                 top: 0;
                 left: 100%;
                 position: absolute;
-                border-top: 43px solid transparent;
-                border-bottom: 43px solid transparent;
-                border-left: 30px solid $roadmap-slider-border;
+                border-top: 33px solid transparent;
+                border-bottom: 33px solid transparent;
+                border-left: 20px solid $roadmap-slider-border;
                 display: block;
                 content: '';
-
-                @media (max-width: $sm-max) {
-                    border-top: 35px solid transparent;
-                    border-bottom: 35px solid transparent;
-                    border-left: 20px solid $roadmap-slider-border;
-                }
             }
         }
     }
 
     &__slide {
-        padding: 72px 30px 110px;
+        padding: 40px 30px 80px;
 
         @media (max-width: $sm-max) {
-            padding: 32px 16px 90px;
+            padding: 32px 16px 80px;
         }
 
         &, & * {
             font-family: 'Gilroy', sans-serif;
             font-weight: 500;
-            font-size: 26px;
-            line-height: 30px;
+            font-size: 24px;
+            line-height: 24px;
             color: $white-color;
 
             @media (max-width: $md-max) {
-                font-size: 24px;
-                line-height: 28px;
-            }
-
-            @media (max-width: $sm-max) {
                 font-size: 20px;
-                line-height: 24px;
+                line-height: 20px;
+            }
+    
+            @media (max-width: $sm-max) {
+                font-size: 16px;
+                line-height: 16px;
             }
         }
     }
@@ -220,9 +203,9 @@
 
     &__list-elem {
         display: flex;
-        align-items: center;
 
         &::before {
+            margin-top: 2px;
             margin-right: 12px;
             width: 20px;
             height: 20px;
@@ -233,6 +216,10 @@
             content: '';
             background-color: $primary-color;
             box-shadow: 0 0 6.48px $primary-btn-color;
+    
+            @media (max-width: $sm-max) {
+                margin-top: -2px;
+            }
         }
 
         &--unactive {
@@ -244,10 +231,32 @@
     }
 
     &__wrapper {
+        position: relative;
         width: 100%;
         gap: 80px;
         display: flex;
         align-items: center;
+
+        & * {
+            position: relative;
+            z-index: 3;
+        }
+
+
+        &::after,
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+        }
+
+        &::after {
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            width: 100dvw;
+            height: 100%;
+        }
 
         @media (max-width: $md-max) {
             gap: 0;
@@ -321,13 +330,10 @@
         &--prev {
             left: -76px;
             transform: rotate(180deg) translateY(50%);
+            box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, .25);
             transform-origin: center;
 
             @media (max-width: $xxxl-max) {
-                left: 30px;
-            }
-
-            @media (max-width: $sm-max) {
                 left: 16px;
             }
         }
@@ -336,21 +342,13 @@
             right: -76px;
 
             @media (max-width: $xxxl-max) {
-                right: 30px;
-            }
-
-            @media (max-width: $sm-max) {
                 right: 16px;
             }
         }
 
         @media (max-width: $xxxl-max) {
-            bottom: 0;
+            bottom: -8px;
             top: unset;
-        }
-
-        @media (max-width: $sm-max) {
-            bottom: -6px;
         }
     }
 

@@ -18,12 +18,15 @@ function activeByScroll () {
 }
 
 function initAnchor () {
-    $anchors.forEach($anchor => {
-        $anchor.onclick = event => {
-            statusAnchorClick = true
+    $header.addEventListener('click', event => {
+        if (event.target.closest('.js-anchor')) {
             event.preventDefault()
+            const $anchor = event.target.closest('.js-anchor')
+            statusAnchorClick = true
             const href = $anchor.getAttribute('href')
-            document.querySelector(href).scrollIntoView({
+            window.scrollTo({
+                top: document.querySelector(href).offsetTop,
+                left: 0,
                 behavior: 'smooth'
             })
         }
