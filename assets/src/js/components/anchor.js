@@ -17,6 +17,21 @@ function activeByScroll () {
     })
 }
 
+function doScrolling(elementY, duration) { 
+    const startingY = window.scrollY
+    const diff = elementY - startingY
+    let start
+    window.requestAnimationFrame(function step(timestamp) {
+      if (!start) start = timestamp
+      const time = timestamp - start
+      const percent = Math.min(time / duration, 1)
+      window.scrollTo(0, startingY + diff * percent)
+      if (time < duration) {
+        window.requestAnimationFrame(step)
+      }
+    })
+  }
+
 function initAnchor () {
     $header.addEventListener('click', event => {
         if (event.target.closest('.js-anchor')) {
@@ -24,11 +39,10 @@ function initAnchor () {
             const $anchor = event.target.closest('.js-anchor')
             statusAnchorClick = true
             const href = $anchor.getAttribute('href')
-            window.scrollTo({
-                top: document.querySelector(href).offsetTop,
-                left: 0,
-                behavior: 'smooth'
-            })
+            doScrolling(
+                document.querySelector(href).offsetTop,
+                222
+            )
         }
     })
     window.addEventListener('scroll', () => {
