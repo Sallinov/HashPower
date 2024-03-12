@@ -39,9 +39,12 @@ function initAnchor () {
             const $anchor = event.target.closest('.js-anchor')
             statusAnchorClick = true
             const href = $anchor.getAttribute('href')
-            doScrolling(
-                document.querySelector(href).offsetTop,
-                222
+            setTimeout(
+                () => {doScrolling(
+                    document.querySelector(href).offsetTop - $header.offsetHeight,
+                    222
+                )},
+                $header.classList.contains('open') ? 222 : 0
             )
         }
     })

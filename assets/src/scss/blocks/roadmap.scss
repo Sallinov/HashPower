@@ -5,7 +5,7 @@
     display: flex;
 
     @media (max-width: $md-max) {
-        padding: 100px 0;
+        padding: 66px 0;
     }
 
     .container {
@@ -240,22 +240,6 @@
         & * {
             position: relative;
             z-index: 3;
-        }
-
-
-        &::after,
-        &::before {
-            position: absolute;
-            display: block;
-            content: '';
-        }
-
-        &::after {
-            top: 0;
-            bottom: 0;
-            z-index: 2;
-            width: 100dvw;
-            height: 100%;
         }
 
         @media (max-width: $md-max) {
