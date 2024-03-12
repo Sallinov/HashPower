@@ -7,7 +7,7 @@ let buffer_scroll_position = window.scrollY
 
 function activeByScroll () {
     $anchors.forEach($anchor => {
-        const topScroll = window.scrollY
+        const topScroll = document.documentElement.scrollTop
         const $target = document.querySelector($anchor.getAttribute('href'))
         const min = $target.offsetTop - ($header.offsetHeight * 2)
         const max = $target.offsetTop + $target.offsetHeight - ($header.offsetHeight * 2)
